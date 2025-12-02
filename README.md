@@ -1,7 +1,7 @@
-Daily Habit Accountability System (DHAS)
+#Daily Habit Accountability System (DHAS)
 A smart web application that tracks habits and sends "accountability scores" based on your consistency.
 
-Overview
+#Overview
 DHAS is a habit tracking web app built with Python Flask backend and vanilla JavaScript frontend. It helps users build better habits by:
 
 Tracking daily habit completions
@@ -10,7 +10,7 @@ Maintaining streak counters
 Generating weekly accountability reports
 Providing visual feedback on habit health
 
-Key Features
+#Key Features
 Habit Management - Create, edit, delete habits
 Daily Tracking - Mark habits complete/incomplete
 Streak Tracking - Current streak and longest streak
