@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Habit Accountability System</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="/static/css/animations.css">
+    <link rel="stylesheet" href="/static/css/themes.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <span class="logo-icon">📊</span>
+                <h1>DHAS</h1>
+                <span class="tagline">Daily Habit Accountability System</span>
+            </div>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" title="Toggle Theme">
+                    <span class="sun-icon">☀️</span>
+                    <span class="moon-icon">🌙</span>
+                </button>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <section class="dashboard-header fade-in">
+                <div class="score-card main-score">
+                    <div class="score-icon">🎯</div>
+                    <div class="score-content">
+                        <h2>Overall Accountability Score</h2>
+                        <div class="score-display">
+                            <span class="score-value" id="overallScore">0</span>
+                            <span class="score-percent">%</span>
+                        </div>
+                        <div class="health-badge" id="overallHealth">
+                            <span class="health-icon"></span>
+                            <span class="health-text"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats-row">
+                    <div class="stat-card slide-up">
+                        <span class="stat-icon">📋</span>
+                        <span class="stat-value" id="totalHabits">0</span>
+                        <span class="stat-label">Total Habits</span>
+                    </div>
+                    <div class="stat-card slide-up" style="animation-delay: 0.1s;">
+                        <span class="stat-icon">✅</span>
+                        <span class="stat-value" id="todayCompletions">0</span>
+                        <span class="stat-label">Today's Completions</span>
+                    </div>
+                    <div class="stat-card slide-up" style="animation-delay: 0.2s;">
+                        <span class="stat-icon">📅</span>
+                        <span class="stat-value" id="currentDate">-</span>
+                        <span class="stat-label">Today</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="habits-section">
+                <div class="section-header">
+                    <h2>Your Habits</h2>
+                    <button class="btn btn-primary" id="addHabitBtn">
+                        <span>+</span> Add New Habit
+                    </button>
+                </div>
+
+                <div class="habits-grid" id="habitsGrid">
+                </div>
+            </section>
+
+            <section class="reports-section fade-in">
+                <div class="section-header">
+                    <h2>Weekly Reports</h2>
+                    <button class="btn btn-secondary" id="generateReportBtn">
+                        Generate Report
+                    </button>
+                </div>
+
+                <div class="reports-container" id="reportsContainer">
+                </div>
+            </section>
+        </main>
+
+        <div class="modal" id="habitModal">
+            <div class="modal-overlay"></div>
+            <div class="modal-content scale-in">
+                <div class="modal-header">
+                    <h3 id="modalTitle">Add New Habit</h3>
+                    <button class="modal-close" id="closeModal">&times;</button>
+                </div>
+                <form id="habitForm">
+                    <div class="form-group">
+                        <label for="habitName">Habit Name</label>
+                        <input type="text" id="habitName" placeholder="e.g., Morning Exercise" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="habitDescription">Description (optional)</label>
+                        <textarea id="habitDescription" placeholder="Add details about your habit..."></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" id="cancelBtn">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Save Habit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="modal" id="historyModal">
+            <div class="modal-overlay"></div>
+            <div class="modal-content scale-in history-modal-content">
+                <div class="modal-header">
+                    <h3 id="historyModalTitle">Habit History</h3>
+                    <button class="modal-close" id="closeHistoryModal">&times;</button>
+                </div>
+                <div class="history-calendar" id="historyCalendar">
+                </div>
+            </div>
+        </div>
+
+        <div class="toast-container" id="toastContainer"></div>
+    </div>
+
+    <script src="/static/js/api.js"></script>
+    <script src="/static/js/utils.js"></script>
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
